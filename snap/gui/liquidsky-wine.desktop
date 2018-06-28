@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=Liquidsky for Windows on Wine
+Exec=liquidsky-wine
+Icon=${SNAP}/meta/gui/liquidsky-wine.png
+Categories=Game;
+Terminal=false
+StartupNotify=true
+StartupWMClass=Liquidsky.exe
+Keywords=game

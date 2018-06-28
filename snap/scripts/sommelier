@@ -1,7 +1,7 @@
 #!/bin/bash
 
-TITLE="Steam for Windows"
-NOTICE="This snap is experimental please visit https://github.com/Snapcrafters/steamforwindows for details."
+TITLE="Liquidsky on Wine"
+NOTICE="This snap is experimental."
 WINE_ARGS="-SkipBuildPatchPrereq -OpenGL -no-cef-sandbox"
 
 function install_app() {

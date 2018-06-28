@@ -1,10 +1,9 @@
-name: steamforwindows
+name: liquidsky-wine
 version: 'latest'
-summary: Steam for Windows under WINE
+summary: Liquidsky for Windows under WINE
 description: |
-  This snap downloads and installs Steam for Windows in WINE on Linux.
-  First setup takes a little while to download the necessary parts.
-  Subsequent launches are faster.
+  This snap downloads and installs the liquidsky client for Windows
+  in WINE on Linux.
 
 grade: stable
 confinement: strict
@@ -13,12 +12,12 @@ architectures:
     run-on: [amd64, i386]
 
 apps:
-  steamforwindows:
-    command: bin/sommelier "$WINEPREFIX/drive_c/Program Files/Steam/Steam.exe"
+  liquidsky-wine:
+    command: bin/sommelier "$WINEPREFIX/drive_c/Program Files/LiquidSky/LiquidSky.exe"
     environment:
       WINEPREFIX: "$SNAP_USER_COMMON/.wine"
       DLLOVERRIDES: "mscoree,mshtml=" # Prevent pop-ups about Wine Mono and Wine Gecko
-      INSTALL_URL: "http://media.steampowered.com/client/installer/SteamSetup.exe"
+      INSTALL_URL: "https://cdn.liquidsky.com/assets/LiquidSky.exe"
       LC_ALL: "C.UTF-8"
     plugs:
       - desktop
@@ -197,7 +196,7 @@ parts:
     after:
       - enable-i386
 
-  steamforwindows:
+  liquidsky-wine:
     plugin: dump
     build-attributes:
       - no-system-libraries
