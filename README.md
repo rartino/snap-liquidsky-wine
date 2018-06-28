@@ -6,13 +6,11 @@
 
 <p align="center"><p><b>This is (the source for) a snap package for Liquidsky for Windows running in Wine.</b></p>
 
-  <p><b>Important: this is in no way affiliated with Liquidsky. No Liquidsky software is part of the package itelf. (Upon running the snap package, it downloads the installer for Liquidsky from the official servers and executes it.)</b></p>
+  <p><b>Important: this is in no way affiliated with Liquidsky. No Liquidsky software is part of the package itself. Upon running the snap package, it downloads the installer for Liquidsky from the official servers and executes it.</b></p>
 
-  <p>This snap is just a slightly modified version of the <a href="https://github.com/snapcrafters/steamforwindows">steamforwindows</a> snap.</p>
- 
-  <p>It is supposedly working on Ubuntu, Fedora, Debian, and other major Linux distributions.</p> 
+  <p>This snap is just a slightly modified version of the <a href="https://github.com/snapcrafters/steamforwindows">steamforwindows</a> snap. It is supposedly working on Ubuntu, Fedora, Debian, and other major Linux distributions.</p> 
 
-  <p><b>This snap is experimental, built with development releases of upstream WINE and may not function as expected. If you encounter issues please report them is this GitHUb project.</b></p>
+  <p>This snap is experimental, built with development releases of upstream WINE and may not function as expected. If you encounter issues you can report them as an issue at this GitHUb project. <b>Please do NOT bother Liquidsky support with any issues you experience when using this software, since it is NOT sactioned by them in any shape or form.</b></p>
 
 ## Install
 
