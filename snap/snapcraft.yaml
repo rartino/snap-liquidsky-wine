@@ -1,4 +1,4 @@
-name: unofficial-liquidsky-wine
+name: liquidsky-wine-unofficial
 version: 'latest'
 summary: Unofficial snap for running Liquidsky for Windows under WINE
 description: |
@@ -12,7 +12,7 @@ architectures:
     run-on: [amd64, i386]
 
 apps:
-  unofficial-liquidsky-wine:
+  liquidsky-wine-unofficial:
     command: bin/sommelier "$SNAP_USER_COMMON/LiquidSky.exe"
     environment:
       WINE_ARGS: " "
@@ -222,7 +222,7 @@ parts:
     after:
       - enable-i386
 
-  unofficial-liquidsky-wine:
+  liquidsky-wine-unofficial:
     plugin: dump
     build-attributes:
       - no-system-libraries

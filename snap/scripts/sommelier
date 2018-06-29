@@ -207,10 +207,10 @@ if [[ ${WINE_EXE} = *"winecfg"* ]] || [[ ${WINE_EXE} = *"wineboot"* ]] || [[ ${W
   env WINEARCH="${WINEARCH}" WINEPREFIX="${WINEPREFIX}" "$@"
 elif [ -e "${WINE_EXE}" ]; then
   # Notification
-  notify-send --icon "${SNAP}/meta/gui/unofficial-liquidsky-wine.png" --expire-time=15000 "${TITLE}" "${NOTICE}"
+  notify-send --icon "${SNAP}/meta/gui/liquidsky-wine-unofficial.png" --expire-time=15000 "${TITLE}" "${NOTICE}"
   launch_app
 else
   # Notification
-  notify-send --icon "${SNAP}/meta/gui/unofficial-liquidsky-wine.png" --expire-time=15000 "${TITLE}" "${NOTICE}"
+  notify-send --icon "${SNAP}/meta/gui/liquidsky-wine-unofficial.png" --expire-time=15000 "${TITLE}" "${NOTICE}"
   install_app
 fi

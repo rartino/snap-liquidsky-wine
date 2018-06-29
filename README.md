@@ -12,36 +12,40 @@ This snap is experimental, built with development releases of upstream WINE and 
 
 Installing a pre-built snap package (distributed outside the official snap channel for now):
 ```
-   wget https://cl.ly/1N2c2u3F1N2t/download/unofficial-liquidsky-wine_latest_multi.snap
-   snap install ./unofficial-liquidsky-wine_latest_multi.snap --dangerous
-   snap connect unofficial-liquidsky-wine:joystick
-   unofficial-liquidsky-wine
+   wget https://cl.ly/1N2c2u3F1N2t/download/liquidsky-wine-unofficial_latest_multi.snap
+   snap install ./liquidsky-wine-unofficial_latest_multi.snap --dangerous
+   snap connect liquidsky-wine-unofficial:joystick
+   liquidsky-wine-unofficial
 ```
-The md5sum of `unofficial-liquidsky-wine_latest_multi.snap` is: `01f2ed2863889731e9105d305e235cb1`, the sha-1 is: `57e16614023c2ce3d608c26b262855b0d9b9cd5b`.
+The md5sum of `liquidsky-wine-unofficial_latest_multi.snap` is: `01f2ed2863889731e9105d305e235cb1`, the sha-1 is: `57e16614023c2ce3d608c26b262855b0d9b9cd5b`.
 
 I suppose we will eventually get it added to the snap edge distribution channel. At that point installation will be:
 ```
-   snap install unofficial-liquidsky-wine --edge
-   snap connect unofficial-liquidsky-wine:joystick
-   unofficial-liquidsky-wine
+   snap install liquidsky-wine-unofficial --edge
+   snap connect liquidsky-wine-unofficial:joystick
+   liquidsky-wine-unofficial
 ```
 
 To rebuild the package from source instead (somewhat safer, but requires snap development tools):
 ```
-   git clone git@github.com:rartino/snap-unofficial-liquidsky-wine.git
-   cd snap-unofficial-liquidsky-wine
+   git clone git@github.com:rartino/snap-liquidsky-wine-unofficial.git
+   cd snap-liquidsky-wine-unofficial
    make
-   snap install ./unofficial-liquidsky-wine_latest_multi.snap --dangerous
-   snap connect unofficial-liquidsky-wine:joystick
-   unofficial-liquidsky-wine
+   snap install ./liquidsky-wine-unofficial_latest_multi.snap --dangerous
+   snap connect liquidsky-wine-unofficial:joystick
+   liquidsky-wine-unofficial
 ```
 
 Once you have it installed, you can also alternatively run the client with the '--no-gpu' flag this way:
 ```
-   unofficial-liquidsky-wine.nogpu
+   liquidsky-wine-unofficial.nogpu
 ```
 
-**Note: it seems that the first time one restarts the snap after a reboot, LiquidSky thinks you are running it on a new computer and asks for login + email verification. A workaround seems to be to just shut it down and restart it.**
+## Known issues and limitations
 
-([Don't have snapd installed?](https://snapcraft.io/docs/core/install))
+- In some installations, the first time one restarts the snap after a reboot, LiquidSky thinks it is being run on a new computer and asks for login + email verification. A workaround seems to be to just close it and restart it.
 
+- On one Ubuntu 17.10 installation I've seen running liquidsky-wine-unofficial break with an error about being unable to allocate space for loading dynamic libraries. It is unclear what caused this error, but upgrading to Ubuntu 18.04 solved it.
+
+- If you don't have snap installed, see: https://snapcraft.io/docs/core/install
+ 
