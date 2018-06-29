@@ -2,7 +2,7 @@
 Type=Application
 Encoding=UTF-8
 Name=LiquidSky using Wine (unofficial)
-Exec=unofficial-liquidsky-wine
+Exec=liquidsky-wine-unofficial
 Icon=${SNAP}/meta/gui/liquidsky-wine-unofficial.png
 Categories=Game;
 Terminal=false
