@@ -10,23 +10,14 @@ This snap is experimental, built with development releases of upstream WINE and 
 
 ## Install
 
-Installing a pre-built snap package (distributed outside the official snap channel for now):
-```
-   wget https://cl.ly/1N2c2u3F1N2t/download/liquidsky-wine-unofficial_latest_multi.snap
-   snap install ./liquidsky-wine-unofficial_latest_multi.snap --dangerous
-   snap connect liquidsky-wine-unofficial:joystick
-   liquidsky-wine-unofficial
-```
-The md5sum of `liquidsky-wine-unofficial_latest_multi.snap` is: `01f2ed2863889731e9105d305e235cb1`, the sha-1 is: `57e16614023c2ce3d608c26b262855b0d9b9cd5b`.
-
-I suppose we will eventually get it added to the snap edge distribution channel. At that point installation will be:
+Installing snap package from edge channel:
 ```
    snap install liquidsky-wine-unofficial --edge
    snap connect liquidsky-wine-unofficial:joystick
    liquidsky-wine-unofficial
 ```
 
-To rebuild the package from source instead (somewhat safer, but requires snap development tools):
+To instead rebuild the snap from source and install it:
 ```
    git clone git@github.com:rartino/snap-liquidsky-wine-unofficial.git
    cd snap-liquidsky-wine-unofficial
