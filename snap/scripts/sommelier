@@ -2,8 +2,8 @@
 
 TITLE="Liquidsky on Wine"
 NOTICE="This snap is experimental."
-WINE_ARGS="-SkipBuildPatchPrereq -OpenGL -no-cef-sandbox ${WINE_ARGS}"
-WINE_INSTALL_ARGS="-SkipBuildPatchPrereq -OpenGL -no-cef-sandbox ${WINE_INSTALL_ARGS}"
+WINE_ARGS="${WINE_ARGS}"
+WINE_INSTALL_ARGS="${WINE_INSTALL_ARGS}"
 
 function install_app() {
   # Install additional requirements via winetricks here
@@ -20,7 +20,7 @@ function install_app() {
     perl -p -e '$| = 1; s/^.* +([0-9]+%) +([0-9,.]+[GMKB]) +([0-9hms,.]+).*$/\1\n# Downloading... \2 (\3)/' | \
     yad --progress --title="${INSTALL_EXE}" --width=400 --center --no-buttons --auto-close --auto-kill --on-top --no-escape
     # Installs the wine application
-    env WINEARCH="${WINEARCH}" WINEPREFIX="${WINEPREFIX}" "${WINELOADER}" "${HOME}/${INSTALL_EXE}" ${WINE_INSTALL_ARGS}
+    env WINEARCH="${WINEARCH}" WINEPREFIX="${WINEPREFIX}" "${WINELOADER}" "${TMPDIR}/${INSTALL_EXE}" "${WINE_INSTALL_ARGS}"
     # Removes the cached installer -- (don't)
     # rm -v "${HOME}/${INSTALL_EXE}"
   fi
@@ -36,9 +36,9 @@ function launch_app() {
     # Creating a virtual desktop the same size will eliminate bugs when
     # switching from fullscreen to windowed mode.
     NATIVE_RES=$(xrandr -q | grep primary | cut -d' ' -f4 | cut -d'+' -f1)
-    env WINEARCH="${WINEARCH}" WINEPREFIX="${WINEPREFIX}" "${WINELOADER}" explorer /desktop="virtual","${NATIVE_RES}" "${WINE_EXE}" ${WINE_ARGS} "$@"
+    env WINEARCH="${WINEARCH}" WINEPREFIX="${WINEPREFIX}" "${WINELOADER}" explorer /desktop="virtual","${NATIVE_RES}" "${WINE_EXE}" "${WINE_ARGS}" $@
   else
-    env WINEARCH="${WINEARCH}" WINEPREFIX="${WINEPREFIX}" "${WINELOADER}" "${WINE_EXE}" ${WINE_ARGS} "$@"
+    env WINEARCH="${WINEARCH}" WINEPREFIX="${WINEPREFIX}" "${WINELOADER}" "${WINE_EXE}" "${WINE_ARGS}" $@
   fi
 }
 
