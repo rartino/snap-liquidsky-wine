@@ -1,7 +1,7 @@
 <h1 align="center">
-  <img src="snap/gui/liquidsky-wine.png" alt="Liquidsky in Wine">
+  <img src="snap/gui/unofficial-liquidsky-wine.png" alt="Liquidsky in Wine">
   <br />
-  LiquidSky Windows client in Wine
+  Unofficial snap package for running LiquidSky Windows client in Wine
 </h1>
 
 <p align="center"><p><b>This is (the source for) a snap package for running on Linux the <a href="https://gaming.liquidsky.com/">LiquidSky gaming service</a> client for Windows by using Wine.</b></p>
@@ -16,30 +16,31 @@
 
 Installing a pre-built snap package (distributed outside the official snap channel for now):
 ```
-   wget https://cl.ly/3e0m473e2o2V/download/liquidsky-wine_latest_multi.snap
-   snap install ./liquidsky-wine_latest_multi.snap --dangerous
-   snap connect liquidsky-wine:joystick
-   liquidsky-wine
+   wget https://cl.ly/3e0m473e2o2V/download/unofficial-liquidsky-wine_latest_multi.snap
+   snap install ./unofficial-liquidsky-wine_latest_multi.snap --dangerous
+   snap connect unofficial-liquidsky-wine:joystick
+   unofficial-liquidsky-wine
 ```
-The md5sum of liquidsky-wine_latest_multi.snap is: `4778bb33c2ff83c185a1d9505ec5dd67`, the sha-1 is: `d8dd05c98bc16beaae7ae41d2b0a866e5224196e`.
+The md5sum of unofficial-liquidsky-wine_latest_multi.snap is: `4778bb33c2ff83c185a1d9505ec5dd67`, the sha-1 is: `d8dd05c98bc16beaae7ae41d2b0a866e5224196e`.
 
 I suppose we will eventually get it added to the snap edge distribution channel. At that point installation will be:
 ```
-   snap install liquidsky-wine --edge
-   snap connect liquidsky-wine:joystick
-   liquidsky-wine
+   snap install unofficial-liquidsky-wine --edge
+   snap connect unofficial-liquidsky-wine:joystick
+   unofficial-liquidsky-wine
 ```
 
 Rebuilding the package from source (somewhat safer, but requires snap development tools):
 ```
-   git clone git@github.com:rartino/snap-liquidsky-wine.git
-   cd snap-liquidsky-wine
+   git clone git@github.com:rartino/snap-unofficial-liquidsky-wine.git
+   cd snap-unofficial-liquidsky-wine
    make
-   snap install ./liquidsky-wine_latest_multi.snap --dangerous
-   snap connect liquidsky-wine:joystick
-   liquidsky-wine
+   snap install ./unofficial-liquidsky-wine_latest_multi.snap --dangerous
+   snap connect unofficial-liquidsky-wine:joystick
+   unofficial-liquidsky-wine
 ```
 
+<b>Note: it seems that the first time one restarts the snap after a reboot, LiquidSky thinks you are running it on a new computer and asks for login + email verification. A workaround seems to be to just shut it down and restart it.</b>
 
 ([Don't have snapd installed?](https://snapcraft.io/docs/core/install))
 

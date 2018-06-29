@@ -1,9 +1,9 @@
 [Desktop Entry]
 Type=Application
 Encoding=UTF-8
-Name=Liquidsky for Windows on Wine
+Name=Unofficial snap package for Liquidsky for Windows in Wine
 Exec=liquidsky-wine
-Icon=${SNAP}/meta/gui/liquidsky-wine.png
+Icon=${SNAP}/meta/gui/unofficial-liquidsky-wine.png
 Categories=Game;
 Terminal=false
 StartupNotify=true

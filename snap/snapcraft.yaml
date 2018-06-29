@@ -1,6 +1,6 @@
-name: liquidsky-wine
+name: unofficial-liquidsky-wine
 version: 'latest'
-summary: Liquidsky for Windows under WINE
+summary: Unofficial snap for running Liquidsky for Windows under WINE
 description: |
   This snap downloads and installs the liquidsky client for Windows
   in WINE on Linux.
@@ -12,8 +12,8 @@ architectures:
     run-on: [amd64, i386]
 
 apps:
-  liquidsky-wine:
-    command: bin/sommelier "$WINEPREFIX/drive_c/Program Files/LiquidSky/LiquidSky.exe"
+  unofficial-liquidsky-wine:
+    command: bin/sommelier "$SNAP_USER_COMMON/LiquidSky.exe"
     environment:
       WINEPREFIX: "$SNAP_USER_COMMON/.wine"
       DLLOVERRIDES: "mscoree,mshtml=" # Prevent pop-ups about Wine Mono and Wine Gecko
@@ -196,7 +196,7 @@ parts:
     after:
       - enable-i386
 
-  liquidsky-wine:
+  unofficial-liquidsky-wine:
     plugin: dump
     build-attributes:
       - no-system-libraries

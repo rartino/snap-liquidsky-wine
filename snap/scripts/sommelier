@@ -15,13 +15,13 @@ function install_app() {
   # Modify or remove this as required by your application.
   if [ -n "${INSTALL_URL}" ]; then
     # Downloads a file with progress using wget and yad
-    wget "${INSTALL_URL}" -O "${TMPDIR}/${INSTALL_EXE}" 2>&1 | \
+    wget "${INSTALL_URL}" -O "${HOME}/${INSTALL_EXE}" 2>&1 | \
     perl -p -e '$| = 1; s/^.* +([0-9]+%) +([0-9,.]+[GMKB]) +([0-9hms,.]+).*$/\1\n# Downloading... \2 (\3)/' | \
     yad --progress --title="${INSTALL_EXE}" --width=400 --center --no-buttons --auto-close --auto-kill --on-top --no-escape
     # Installs the wine application
-    env WINEARCH="${WINEARCH}" WINEPREFIX="${WINEPREFIX}" "${WINELOADER}" "${TMPDIR}/${INSTALL_EXE}" "${WINE_ARGS}"
+    env WINEARCH="${WINEARCH}" WINEPREFIX="${WINEPREFIX}" "${WINELOADER}" "${HOME}/${INSTALL_EXE}" "${WINE_ARGS}"
     # Removes the cached installer
-    rm -v "${TMPDIR}/${INSTALL_EXE}"
+    # rm -v "${HOME}/${INSTALL_EXE}"
   fi
 }
 
