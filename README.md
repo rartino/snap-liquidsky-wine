@@ -6,7 +6,7 @@
 
 This snap is just a slightly modified version of the <a href="https://github.com/snapcrafters/steamforwindows">steamforwindows</a> snap. It is supposedly working on Ubuntu, Fedora, Debian, and other major Linux distributions.
 
-This snap is experimental, built with development releases of upstream WINE and may not function as expected. If you encounter issues you can report them as an issue at this GitHUb project. <b>Please do NOT bother LiquidSky support with any issues you experience when using this software, since it is NOT sactioned by them in any way, shape, or form.
+This snap is experimental, built with development releases of upstream WINE and may not function as expected. If you encounter issues you can report them as an issue at this GitHUb project. **Please do NOT bother LiquidSky support with any issues you experience when using this software, since it is NOT sactioned by them in any way, shape, or form.**
 
 ## Install
 
@@ -36,7 +36,7 @@ Rebuilding the package from source (somewhat safer, but requires snap developmen
    unofficial-liquidsky-wine
 ```
 
-<b>Note: it seems that the first time one restarts the snap after a reboot, LiquidSky thinks you are running it on a new computer and asks for login + email verification. A workaround seems to be to just shut it down and restart it.</b>
+**Note: it seems that the first time one restarts the snap after a reboot, LiquidSky thinks you are running it on a new computer and asks for login + email verification. A workaround seems to be to just shut it down and restart it.**
 
 ([Don't have snapd installed?](https://snapcraft.io/docs/core/install))
 
