@@ -15,6 +15,8 @@ apps:
   unofficial-liquidsky-wine:
     command: bin/sommelier "$SNAP_USER_COMMON/LiquidSky.exe"
     environment:
+      WINE_ARGS: " "
+      WINE_INSTALL_ARGS: " "
       WINEPREFIX: "$SNAP_USER_COMMON/.wine"
       DLLOVERRIDES: "mscoree,mshtml=" # Prevent pop-ups about Wine Mono and Wine Gecko
       INSTALL_URL: "https://cdn.liquidsky.com/assets/LiquidSky.exe"
@@ -32,6 +34,30 @@ apps:
       - removable-media
       - wayland
       - x11
+
+  nogpu:
+    command: bin/sommelier "$SNAP_USER_COMMON/LiquidSky.exe"
+    environment:
+      WINE_ARGS: " "
+      WINE_INSTALL_ARGS: " "
+      WINEPREFIX: "$SNAP_USER_COMMON/.wine"
+      DLLOVERRIDES: "mscoree,mshtml=" # Prevent pop-ups about Wine Mono and Wine Gecko
+      INSTALL_URL: "https://cdn.liquidsky.com/assets/LiquidSky.exe"
+      LC_ALL: "C.UTF-8"
+    plugs:
+      - desktop
+      - desktop-legacy
+      - hardware-observe
+      - home
+      - joystick
+      - network
+      - network-bind
+      - opengl
+      - pulseaudio
+      - removable-media
+      - wayland
+      - x11
+
   wineboot:
     command: bin/sommelier $SNAP/bin/wineboot
     environment:
